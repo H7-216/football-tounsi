@@ -38,7 +38,19 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    background-size: cover;
+}
+
+.cell.x {
+    background-image: url('x.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.cell.circle {
+    background-image: url('circle.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
 }
 
@@ -58,17 +70,4 @@ button {
     padding: 10px 20px;
     font-size: 1rem;
     cursor: pointer;
-}
-
-/* Classes for the images */
-.x {
-    background-image: url('x.jpg');
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.circle {
-    background-image: url('circle.jpg');
-    background-size: contain;
-    background-repeat: no-repeat;
 }
