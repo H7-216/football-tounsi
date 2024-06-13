@@ -1,6 +1,8 @@
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 const shootButton = document.getElementById('shootButton');
+const leftButton = document.getElementById('leftButton');
+const rightButton = document.getElementById('rightButton');
 const difficultySelect = document.getElementById('difficulty');
 const scoreDisplay = document.getElementById('score');
 
@@ -106,14 +108,23 @@ function setDifficulty() {
     }
 }
 
-function handleTouch(event) {
-    event.preventDefault();
-    shoot();
+function moveLeft() {
+    ballX -= 5;
+    if (ballX - ballRadius < 0) ballX = ballRadius;
+    draw();
+}
+
+function moveRight() {
+    ballX += 5;
+    if (ballX + ballRadius > canvas.width) ballX = canvas.width - ballRadius;
+    draw();
 }
 
 shootButton.addEventListener('click', shoot);
+leftButton.addEventListener('click', moveLeft);
+rightButton.addEventListener('click', moveRight);
 difficultySelect.addEventListener('change', setDifficulty);
-canvas.addEventListener('touchstart', handleTouch, false);
+canvas.addEventListener('touchstart', shoot);
 
 draw();
 updateScore();
