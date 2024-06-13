@@ -24,7 +24,7 @@ let goalieSpeed = 3;
 let goalieDirection = 1;
 
 const backgroundImage = new Image();
-backgroundImage.src = 'images/background.png'; // Chemin vers votre image
+backgroundImage.src = 'background.PNG'; // Chemin vers votre image
 
 function drawBackground() {
     ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
