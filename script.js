@@ -23,6 +23,13 @@ const goalieHeight = 10;
 let goalieSpeed = 3;
 let goalieDirection = 1;
 
+const backgroundImage = new Image();
+backgroundImage.src = 'images/background.png'; // Chemin vers votre image
+
+function drawBackground() {
+    ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
+}
+
 function drawGoal() {
     ctx.fillStyle = 'gray';
     ctx.fillRect(goalX, goalY, goalWidth, goalHeight);
@@ -43,6 +50,7 @@ function drawBall() {
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawBackground();
     drawGoal();
     drawGoalie();
     drawBall();
@@ -126,6 +134,9 @@ rightButton.addEventListener('click', moveRight);
 difficultySelect.addEventListener('change', setDifficulty);
 canvas.addEventListener('touchstart', shoot);
 
-draw();
+backgroundImage.onload = function() {
+    draw();
+};
+
 updateScore();
 setDifficulty();
