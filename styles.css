@@ -1,4 +1,4 @@
-body {
+ body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,9 +52,9 @@ button {
 
 /* Classes for the images */
 .x {
-    background-image: url('x.png');
+    background-image: url('x.jpg');
 }
 
 .circle {
-    background-image: url('circle.png');
+    background-image: url('circle.jpg');
 }
