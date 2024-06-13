@@ -89,3 +89,4 @@ function checkWin(currentClass) {
         });
     });
 }
+
