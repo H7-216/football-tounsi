@@ -17,7 +17,7 @@ body {
     grid-template-columns: repeat(3, 100px);
     gap: 10px;
     margin: 20px auto;
-    background-image: url('IMG_2737.png'); /* Utiliser l'image fournie comme fond */
+    background-image: url('TN.jpg'); /* Utiliser l'image fournie comme fond */
     background-size: cover; /* Pour que l'image couvre toute la zone */
     background-position: center; /* Centrer l'image */
 }
