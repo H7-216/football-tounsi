@@ -1,69 +1,30 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Site Web</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-        }
-        main {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        form {
-            margin-top: 20px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            background-color: #f9f9f9;
-        }
-    </style>
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Mon Site Web</h1>
-    </header>
-    <main>
-        <h2>Bienvenue sur mon site web !</h2>
-        <p>Ceci est un exemple de site web amélioré avec plus d'images, de liens et un formulaire de contact.</p>
-        <img src="image1.jpg" alt="Image 1">
-        <img src="image2.jpg" alt="Image 2">
-        <p>Voici un <a href="https://www.google.com" target="_blank">lien vers Google</a> pour explorer davantage.</p>
-        <p>N'hésite pas à me contacter en remplissant le formulaire ci-dessous :</p>
-        <form>
-            <h3>Contactez-nous</h3>
-            <label for="nom">Nom :</label>
-            <input type="text" id="nom" name="nom" required><br><br>
-            <label for="email">Email :</label>
-            <input type="email" id="email" name="email" required><br><br>
-            <label for="message">Message :</label><br>
-            <textarea id="message" name="message" rows="4" required></textarea><br><br>
-            <button type="submit">Envoyer</button>
-        </form>
-    </main>
-    <footer>
-        <p>&copy; 2024 Mon Site Web. Tous droits réservés.</p>
-    </footer>
+    <div class="game-container">
+        <h1>Tic-Tac-Toe</h1>
+        <div class="board">
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+        </div>
+        <div class="winning-message" id="winningMessage">
+            <div data-winning-message-text></div>
+            <button id="restartButton">Recommencer</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
