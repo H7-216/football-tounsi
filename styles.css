@@ -27,8 +27,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
     cursor: pointer;
+    background-size: cover;
+    background-position: center;
 }
 
 .winning-message {
@@ -47,4 +48,13 @@ button {
     padding: 10px 20px;
     font-size: 1rem;
     cursor: pointer;
+}
+
+/* Classes for the images */
+.x {
+    background-image: url('x.png');
+}
+
+.circle {
+    background-image: url('circle.png');
 }
