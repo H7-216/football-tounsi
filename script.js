@@ -3,6 +3,8 @@ const board = document.querySelector('.board');
 const winningMessageElement = document.getElementById('winningMessage');
 const winningMessageTextElement = document.querySelector('[data-winning-message-text]');
 const restartButton = document.getElementById('restartButton');
+const singlePlayerButton = document.getElementById('singlePlayerButton');
+const multiPlayerButton = document.getElementById('multiPlayerButton');
 
 const X_CLASS = 'x';
 const CIRCLE_CLASS = 'circle';
@@ -18,10 +20,19 @@ const WINNING_COMBINATIONS = [
 ];
 
 let circleTurn;
+let isSinglePlayer = false;
 
 startGame();
 
 restartButton.addEventListener('click', startGame);
+singlePlayerButton.addEventListener('click', () => {
+    isSinglePlayer = true;
+    startGame();
+});
+multiPlayerButton.addEventListener('click', () => {
+    isSinglePlayer = false;
+    startGame();
+});
 
 function startGame() {
     circleTurn = false;
@@ -46,6 +57,9 @@ function handleClick(e) {
     } else {
         swapTurns();
         setBoardHoverClass();
+        if (isSinglePlayer && !circleTurn) {
+            setTimeout(makeBestMove, 500);
+        }
     }
 }
 
@@ -90,3 +104,18 @@ function checkWin(currentClass) {
     });
 }
 
+// IA simple pour le mode solo
+function makeBestMove() {
+    const availableCells = [...cellElements].filter(cell => !cell.classList.contains(X_CLASS) && !cell.classList.contains(CIRCLE_CLASS));
+    const randomIndex = Math.floor(Math.random() * availableCells.length);
+    const cell = availableCells[randomIndex];
+    placeMark(cell, X_CLASS);
+    if (checkWin(X_CLASS)) {
+        endGame(false);
+    } else if (isDraw()) {
+        endGame(true);
+    } else {
+        swapTurns();
+        setBoardHoverClass();
+    }
+}
