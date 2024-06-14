@@ -21,10 +21,6 @@ body {
     height: auto;
 }
 
-.social-icons {
-    margin: 20px 0;
-}
-
 .social-icons a {
     margin: 0 10px;
     color: #333; /* Couleur des icônes */
