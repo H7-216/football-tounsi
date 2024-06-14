@@ -21,6 +21,21 @@ body {
     height: auto;
 }
 
+.social-icons {
+    margin: 20px 0;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    color: #333; /* Couleur des icônes */
+    text-decoration: none;
+    font-size: 24px; /* Taille des icônes */
+}
+
+.social-icons a:hover {
+    color: #007BFF; /* Couleur au survol des icônes */
+}
+
 .board {
     display: grid;
     grid-template-columns: repeat(3, 100px);
